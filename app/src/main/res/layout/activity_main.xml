@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context="xyz.javaee.study.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/black_2c"
-        app:titleTextColor="@color/write" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bv_bottomNavigation"
@@ -28,6 +22,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bv_bottomNavigation"
-        android:layout_below="@id/toolbar" />
+        />
 
 </RelativeLayout>

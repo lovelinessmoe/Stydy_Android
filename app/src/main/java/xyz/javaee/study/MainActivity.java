@@ -6,20 +6,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import xyz.javaee.study.R;
 import xyz.javaee.study.utils.BottomNavigationViewHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar mToolbar;
     private BottomNavigationView mBottomNavigationView;
 
     private int lastIndex;
@@ -32,16 +28,13 @@ public class MainActivity extends AppCompatActivity {
         initView();
         initBottomNavigation();
         initData();
-
     }
 
     public void initView() {
-        mToolbar = findViewById(R.id.toolbar);
 
     }
 
     public void initData() {
-        setSupportActionBar(mToolbar);
         mFragments = new ArrayList<>();
         mFragments.add(new HomeFragment());
         mFragments.add(new DiscoverFragment());
@@ -79,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void setFragmentPosition(int position) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

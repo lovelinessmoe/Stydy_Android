@@ -1,15 +1,9 @@
 package xyz.javaee.study.Adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
-import java.util.List;
-
-import xyz.javaee.study.DiscoverFragment;
 import xyz.javaee.study.View.ViewPagerFragment;
 
 public class MyAdapter extends FragmentPagerAdapter {

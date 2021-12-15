@@ -7,14 +7,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_video_learn.xml" value="0.12771739130434784" />
-        <entry key="app/src/main/res/layout/activity_video_lern.xml" value="0.25" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14322916666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11727456940222898" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.11727456940222898" />
         <entry key="app/src/main/res/layout/fragment_contacts.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.1381340579710145" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15" />
-        <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.12771739130434784" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/menu/main_bottom_navigation.xml" value="0.24114583333333334" />
       </map>
@@ -25,7 +26,7 @@
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
     <option name="myNullables">
       <value>
-        <list size="15">
+        <list size="14">
           <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
           <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
           <item index="2" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
@@ -40,13 +41,12 @@
           <item index="11" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.Nullable" />
           <item index="12" class="java.lang.String" itemvalue="io.reactivex.annotations.Nullable" />
           <item index="13" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.Nullable" />
-          <item index="14" class="java.lang.String" itemvalue="android.annotation.Nullable" />
         </list>
       </value>
     </option>
     <option name="myNotNulls">
       <value>
-        <list size="15">
+        <list size="14">
           <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
           <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
           <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
@@ -61,7 +61,6 @@
           <item index="11" class="java.lang.String" itemvalue="io.reactivex.annotations.NonNull" />
           <item index="12" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.NonNull" />
           <item index="13" class="java.lang.String" itemvalue="lombok.NonNull" />
-          <item index="14" class="java.lang.String" itemvalue="android.annotation.NonNull" />
         </list>
       </value>
     </option>

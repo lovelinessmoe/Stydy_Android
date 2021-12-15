@@ -1,12 +1,15 @@
 package xyz.javaee.study;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import xyz.javaee.study.utils.BottomNavigationViewHelper;
 
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public void initBottomNavigation() {
         mBottomNavigationView = findViewById(R.id.bv_bottomNavigation);
         // 解决当item大于三个时，非平均布局问题
-        BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
+//        BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
         mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

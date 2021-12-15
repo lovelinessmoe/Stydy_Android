@@ -9,6 +9,7 @@ android {
         }
         applicationId "xyz.javaee.study"
         minSdkVersion 25
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"

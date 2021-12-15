@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="我"
-        android:textColor="@color/theme"
-        android:textSize="23sp" />
+    <Button
+        android:id="@+id/btn_one"
+        android:layout_width="480dp"
+        android:layout_height="125dp"
+        android:background="@drawable/buttonstyle"
+        android:text="登录/注册"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/btn_two"
+        android:layout_width="480dp"
+        android:layout_height="70dp"
+        android:background="@drawable/buttonstyle"
+        android:gravity="left"
+        android:textSize="23sp"
+        android:text="我的订单"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/btn_three"
+        android:layout_width="480dp"
+        android:layout_height="70dp"
+        android:background="@drawable/buttonstyle"
+        android:gravity="left"
+        android:textSize="23sp"
+        android:text="在线咨询"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/btn_fore"
+        android:layout_width="480dp"
+        android:layout_height="70dp"
+        android:background="@drawable/buttonstyle"
+        android:gravity="left"
+        android:textSize="23sp"
+        android:text="设置"
+        tools:ignore="MissingConstraints" />
+
+
+
 
 </LinearLayout>

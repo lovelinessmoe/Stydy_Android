@@ -1,4 +1,4 @@
-package xyz.javaee.study;
+package xyz.javaee.study.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import xyz.javaee.study.Adapter.MyAdapter;
+import xyz.javaee.study.R;
 
 
 public class DiscoverFragment extends Fragment {

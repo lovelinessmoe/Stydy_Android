@@ -1,4 +1,4 @@
-package xyz.javaee.study;
+package xyz.javaee.study.Activity;
 
 
 import android.os.Bundle;
@@ -11,10 +11,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import xyz.javaee.study.utils.BottomNavigationViewHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import xyz.javaee.study.Fragment.AccountFragment;
+import xyz.javaee.study.Fragment.DiscoverFragment;
+import xyz.javaee.study.Fragment.HomeFragment;
+import xyz.javaee.study.Fragment.LearnFragment;
+import xyz.javaee.study.R;
 
 
 public class MainActivity extends AppCompatActivity {

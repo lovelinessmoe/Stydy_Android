@@ -1,4 +1,4 @@
-package xyz.javaee.study;
+package xyz.javaee.study.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import xyz.javaee.study.R;
 
 public class HomeFragment extends Fragment {
     private View mRootView;

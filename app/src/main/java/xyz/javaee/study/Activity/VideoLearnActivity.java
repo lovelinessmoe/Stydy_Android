@@ -54,7 +54,7 @@ public class VideoLearnActivity extends AppCompatActivity {
                     //直接进入全屏
 //                    player.startFullscreen(this, JCVideoPlayerStandard.class, videoUrl, "");
                     //模拟用户点击开始按钮，NORMAL状态下点击开始播放视频，播放中点击暂停视频
-                    player.startButton.performClick();
+//                    player.startButton.performClick();
                 }
             }
 

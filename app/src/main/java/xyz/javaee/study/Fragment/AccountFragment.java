@@ -1,4 +1,4 @@
-package xyz.javaee.study;
+package xyz.javaee.study.Fragment;
 
 import android.os.Bundle;
 
@@ -10,15 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class LearnFragment extends Fragment implements View.OnClickListener{
+import xyz.javaee.study.R;
+
+
+public class AccountFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_learn, container, false);
-    }
-
-    @Override
-    public void onClick(View view) {
-
+        return inflater.inflate(R.layout.fragment_account, container, false);
     }
 }

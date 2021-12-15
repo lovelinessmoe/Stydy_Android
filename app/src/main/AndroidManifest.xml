@@ -10,8 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activity.VideoLernActivity"
-            android:exported="true" />
+            android:name=".Activity.VideoLearnActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="xyz.javaee.videoPlay" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

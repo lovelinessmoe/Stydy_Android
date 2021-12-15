@@ -7,14 +7,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_learn.xml" value="0.25" />
+        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_discover.xml" value="0.171875" />
+        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_home.xml" value="0.171875" />
+        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_learn.xml" value="0.264" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11727456940222898" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_video_lern.xml" value="0.12771739130434784" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.11727456940222898" />
         <entry key="app/src/main/res/layout/fragment_contacts.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.1381340579710145" />
-        <entry key="app/src/main/res/layout/fragment_learn.xml" value="0.12771739130434784" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/menu/main_bottom_navigation.xml" value="0.24114583333333334" />
       </map>
@@ -69,5 +68,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

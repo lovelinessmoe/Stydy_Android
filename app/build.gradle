@@ -5,7 +5,8 @@ android {
     defaultConfig {
         ndk {
             //选择要添加的对应cpu类型的.so库。,打包编译只会加重一个armeabi-v7a，so库
-            abiFilters 'armeabi-v7a'
+            //虚拟机架构x86,真机架构arm64
+            abiFilters 'armeabi-v7a','x86'
         }
         applicationId "xyz.javaee.study"
         minSdkVersion 25

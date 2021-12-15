@@ -2,7 +2,6 @@ package xyz.javaee.study.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.loopj.android.http.AsyncHttpClient;
@@ -12,47 +11,28 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
-import tv.danmaku.ijk.media.player.IMediaPlayer;
-import tv.danmaku.ijk.media.player.IjkMediaPlayer;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import xyz.javaee.study.Entity.Video;
 import xyz.javaee.study.R;
-import xyz.javaee.study.View.MyIjkVideoView;
 
 public class VideoLearnActivity extends AppCompatActivity {
+    private JCVideoPlayerStandard player = null;
+    private String videoURL = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_learn);
-        //初始化播放器
-        MyIjkVideoView ijkVideoView = findViewById(R.id.ijk_video);
-        //加载本地库
-        IjkMediaPlayer.loadLibrariesOnce(null);
-        IjkMediaPlayer.native_profileBegin("libijkplayer.so");
-        //监听
-        ijkVideoView.setListener(new MyIjkVideoView.VideoPlayerListener() {
-            @Override
-            public void onCompletion(IMediaPlayer iMediaPlayer) {
-                Log.d("video", "完成");
-            }
-
-            @Override
-            public boolean onError(IMediaPlayer iMediaPlayer, int i, int i1) {
-                Log.d("video", "失败");
-                return false;
-            }
-
-            @Override
-            public void onPrepared(IMediaPlayer iMediaPlayer) {
-                Log.d("video", "准备");
-
-            }
-        });
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("http://javaee.xyz/video.json", new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                //初始化播放器
+                player = (JCVideoPlayerStandard) findViewById(R.id.player_list_video);
+
                 String json = new String(responseBody, StandardCharsets.UTF_8);
                 //FastJson
                 System.out.println(json);
@@ -62,9 +42,17 @@ public class VideoLearnActivity extends AppCompatActivity {
                 if (!videos.isEmpty()) {
                     Video video = videos.get(1);
                     //设置路径
-                    ijkVideoView.setVideoPath(video.getURL());
-                    //开始加载
-                    ijkVideoView.start();
+
+                    videoURL = video.getURL();
+                    boolean setUp = player.setUp(videoURL, JCVideoPlayer.SCREEN_LAYOUT_NORMAL, "");
+                    /*if (setUp) {
+                        Glide.with(VideoLearnActivity.this).load("http://a4.att.hudong.com/05/71/01300000057455120185716259013.jpg").into(player.thumbImageView);
+                    }*/
+
+                    //直接进入全屏
+//                    player.startFullscreen(this, JCVideoPlayerStandard.class, videoUrl, "");
+                    //模拟用户点击开始按钮，NORMAL状态下点击开始播放视频，播放中点击暂停视频
+                    player.startButton.performClick();
                 }
             }
 
@@ -75,4 +63,18 @@ public class VideoLearnActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    public void onBackPressed() {
+        if (JCVideoPlayer.backPress()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JCVideoPlayer.releaseAllVideos();
+    }
+
 }

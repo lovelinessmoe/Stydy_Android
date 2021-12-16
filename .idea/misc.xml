@@ -7,21 +7,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/bottom_navigation_item_selector.xml" value="0.159375" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/buttonstyle.xml" value="0.159375" />
         <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/oval.xml" value="0.159375" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/oval1.xml" value="0.159375" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/oval2.xml" value="0.159375" />
         <entry key="..\:/Android1/study/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/layout/oval1.xml" value="0.12864583333333332" />
+        <entry key="..\:/Android1/study/app/src/main/res/layout/rv_header_banner.xml" value="0.12864583333333332" />
+        <entry key="..\:/Android1/study/app/src/main/res/layout/rv_header_img.xml" value="0.14322916666666666" />
+        <entry key="..\:/Android1/study/app/src/main/res/layout/rv_item.xml" value="0.14322916666666666" />
         <entry key="..\:/Android1/study/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11727456940222898" />
-        <entry key="app/src/main/res/layout/activity_video_learn.xml" value="0.21" />
-        <entry key="app/src/main/res/layout/discover_tab1_layout.xml" value="0.14855072463768115" />
-        <entry key="app/src/main/res/layout/discover_tab2_layout.xml" value="0.14855072463768115" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.11727456940222898" />
         <entry key="app/src/main/res/layout/fragment_contacts.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1381340579710145" />
-        <entry key="app/src/main/res/layout/video_child_item_layout.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/video_group_item_layout.xml" value="0.25" />
         <entry key="app/src/main/res/menu/main_bottom_navigation.xml" value="0.24114583333333334" />
       </map>
     </option>

@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-    android:layout_height="match_parent">
+    android:orientation="vertical">
+
     <ImageView
+
         android:layout_width="410dp"
         android:layout_height="200dp"
+        android:layout_gravity="center"
         android:scaleType="center"
         android:src="@drawable/fj1"></ImageView>
+
     <TextView
         android:layout_width="410dp"
+
         android:layout_height="30dp"
+        android:layout_gravity="center"
         android:text="全部课程"
         ></TextView>
 
     <ImageView
         android:layout_width="410dp"
+
         android:layout_height="200dp"
-        android:src="@drawable/fj2"
-        android:scaleType="center"></ImageView>
+        android:layout_gravity="center"
+        android:scaleType="center"
+        android:src="@drawable/fj2"></ImageView>
 
     <TextView
         android:layout_width="410dp"
@@ -27,9 +35,11 @@
         android:text="课程001"></TextView>
 
     <ImageView
+        android:layout_gravity="center"
+
         android:layout_width="410dp"
         android:layout_height="200dp"
-        android:src="@drawable/fj3"
-        android:scaleType="center"></ImageView>
+        android:scaleType="center"
+        android:src="@drawable/fj3"></ImageView>
 
 </LinearLayout>

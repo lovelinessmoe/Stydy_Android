@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
         android:layout_width="410dp"
         android:layout_height="30dp"
         android:text="雪中悍刀行首播"></TextView>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <ImageView
         android:layout_width="410dp"
+
         android:layout_height="280dp"
+        android:layout_gravity="center"
         android:scaleType="center"
         android:src="@drawable/xw1"></ImageView>
     <TextView
         android:layout_width="410dp"
+
         android:layout_height="30dp"
+        android:layout_gravity="center"
         android:text="篮网最新消息！欧文回归曙光重现"></TextView>
 
     <ImageView
         android:layout_width="410dp"
+
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:scaleType="center"
+        android:src="@drawable/fj2"></ImageView>
         android:layout_height="300dp"
         android:src="@drawable/xw2"
         android:scaleType="center"></ImageView>
 
     <TextView
         android:layout_width="410dp"
+
         android:layout_height="30dp"
+        android:layout_gravity="center"
         android:text=""></TextView>
 
 
+    <ImageView
+        android:layout_width="410dp"
+
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:scaleType="center"
+        android:src="@drawable/fj3"></ImageView>
 </LinearLayout>

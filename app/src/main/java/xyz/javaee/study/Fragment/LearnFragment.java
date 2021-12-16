@@ -1,5 +1,6 @@
 package xyz.javaee.study.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,16 +31,12 @@ public class LearnFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        initData();
-
-
         root = inflater.inflate(R.layout.fragment_learn, container, false);
         return root;
     }
 
     private void initData() {
-        Data = new ArrayList<Integer>();
+        Data = new ArrayList<>();
         for (int i = 1; i < 11; i++)
             Data.add(i);
         img = new int[]{
@@ -53,7 +50,7 @@ public class LearnFragment extends Fragment {
     }
 
     class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.MyViewHolder> {
-        private Context context  = null;
+        private final Context context;
 
         public LearnAdapter(Context context) {
             this.context = context;
@@ -66,9 +63,10 @@ public class LearnFragment extends Fragment {
             return holder;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-            holder.tv.setText("测试"+Data.get(position));
+            holder.tv.setText("测试"+Data.get(position).toString());
             holder.iv.setImageResource(img[position]);
         }
 
@@ -92,11 +90,6 @@ public class LearnFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        rv_course = getActivity().findViewById(R.id.courseList);
-        rv_course.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        rv_course.setAdapter(learnAdapter = new LearnAdapter(getActivity().getApplicationContext()));
-
-
         //跳转视频播放页
         ImageView imgPlay = root.findViewById(R.id.playButton);
         imgPlay.setOnClickListener(view -> {
@@ -104,5 +97,11 @@ public class LearnFragment extends Fragment {
             intent.setAction("xyz.javaee.videoPlay");
             startActivity(intent);
         });
+
+        initData();
+        rv_course = getActivity().findViewById(R.id.courseList);
+        rv_course.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+        learnAdapter = new LearnAdapter(getContext());
+        rv_course.setAdapter(learnAdapter);
     }
 }

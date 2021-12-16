@@ -50,8 +50,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerInParent="true"
-            app:srcCompat="@drawable/study1start"
-            android:onClick="click"/>
+            android:onClick="click"
+            app:srcCompat="@drawable/study1start" />
 
     </RelativeLayout>
 

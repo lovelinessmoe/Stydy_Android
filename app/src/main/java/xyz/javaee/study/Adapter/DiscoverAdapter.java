@@ -7,11 +7,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import xyz.javaee.study.R;
 import xyz.javaee.study.View.ViewPagerFragment;
 
-public class MyAdapter extends FragmentPagerAdapter {
+public class DiscoverAdapter extends FragmentPagerAdapter {
     private int mCount = 2 ;
 //    R.layout.discover_tab1_layout
     private int[] mLayouts = new int[]{R.layout.discover_tab1_layout,R.layout.discover_tab2_layout};
-    public MyAdapter(FragmentManager fm) {
+    public DiscoverAdapter(FragmentManager fm) {
         super(fm);
     }
 

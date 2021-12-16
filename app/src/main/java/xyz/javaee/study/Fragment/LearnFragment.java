@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import xyz.javaee.study.Adapter.LearnAdapter;
 import xyz.javaee.study.R;
 
 public class LearnFragment extends Fragment {
@@ -32,8 +34,9 @@ public class LearnFragment extends Fragment {
     private View root;
     private RecyclerView rv_course;
     private List<Integer> Data;
+    private int[] img;
     private LearnAdapter learnAdapter;
-    private int [] img;
+
 
     //popwindow
     private LearnFragment context = null;
@@ -61,47 +64,12 @@ public class LearnFragment extends Fragment {
         };
     }
 
-    class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.MyViewHolder> {
-        private final Context context;
-
-        public LearnAdapter(Context context) {
-            this.context = context;
-        }
-
-        @NonNull
-        @Override
-        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_study,parent,false));
-            return holder;
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-            holder.tv.setText("测试"+Data.get(position).toString());
-            holder.iv.setImageResource(img[position]);
-        }
-
-        @Override
-        public int getItemCount() {
-            return 0;
-        }
-
-        class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView tv;
-            ImageView iv;
-            public MyViewHolder(@NonNull View itemView) {
-                super(itemView);
-                tv = itemView.findViewById(R.id.photo_item);
-                iv = itemView.findViewById(R.id.message_item);
-            }
-        }
-    }
 
     View.OnClickListener popClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch(v.getId()){
-                case R.id.pop_bottom_btn:{
+            switch (v.getId()) {
+                case R.id.catalogue: {
                     from = Location.BOTTOM.ordinal();
                     break;
                 }
@@ -113,7 +81,7 @@ public class LearnFragment extends Fragment {
         }
     };
 
-    class popupDismissListener implements PopupWindow.OnDismissListener{
+    class popupDismissListener implements PopupWindow.OnDismissListener {
 
         @Override
         public void onDismiss() {
@@ -122,14 +90,14 @@ public class LearnFragment extends Fragment {
 
     }
 
-    protected void initPopupWindow(){
+    protected void initPopupWindow() {
         View popupWindowView = getLayoutInflater().inflate(R.layout.study1pop, null);
         //内容，高度，宽度
-        if(Location.BOTTOM.ordinal() == from){
+        if (Location.BOTTOM.ordinal() == from) {
             popupWindow = new PopupWindow(popupWindowView, ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
         }
         //动画效果
-        if(Location.BOTTOM.ordinal() == from){
+        if (Location.BOTTOM.ordinal() == from) {
             popupWindow.setAnimationStyle(R.style.AnimationBottomFade);
         }
         //菜单背景色
@@ -140,8 +108,8 @@ public class LearnFragment extends Fragment {
         //高度
         //popupWindow.setHeight(LayoutParams.FILL_PARENT);
         //显示位置
-        if(Location.BOTTOM.ordinal() == from){
-            popupWindow.showAtLocation(getLayoutInflater().inflate(R.layout.fragment_learn, null), Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+        if (Location.BOTTOM.ordinal() == from) {
+            popupWindow.showAtLocation(getLayoutInflater().inflate(R.layout.fragment_learn, null), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         }
         //设置背景半透明
         backgroundAlpha(0.5f);
@@ -162,34 +130,34 @@ public class LearnFragment extends Fragment {
             }
         });
 
-        Button open = (Button)popupWindowView.findViewById(R.id.open);
-        Button save = (Button)popupWindowView.findViewById(R.id.save);
-        Button close = (Button)popupWindowView.findViewById(R.id.close);
+        Button share = (Button) popupWindowView.findViewById(R.id.share);
+        Button download = (Button) popupWindowView.findViewById(R.id.download);
+        Button setting = (Button) popupWindowView.findViewById(R.id.setting);
 
 
-        open.setOnClickListener(new View.OnClickListener() {
+        share.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Open", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "share", Toast.LENGTH_LONG).show();
                 popupWindow.dismiss();
             }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
+        download.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Open", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "download", Toast.LENGTH_LONG).show();
                 popupWindow.dismiss();
             }
         });
 
-        close.setOnClickListener(new View.OnClickListener() {
+        setting.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Open", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "setting", Toast.LENGTH_LONG).show();
                 popupWindow.dismiss();
             }
         });
@@ -197,17 +165,17 @@ public class LearnFragment extends Fragment {
 
     /**
      * 设置添加屏幕的背景透明度
+     *
      * @param bgAlpha
      */
-    public void backgroundAlpha(float bgAlpha)
-    {
+    public void backgroundAlpha(float bgAlpha) {
         WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
         lp.alpha = bgAlpha; //0.0-1.0
         getActivity().getWindow().setAttributes(lp);
     }
+
     /**
      * 菜单弹出方向
-     *
      */
     public enum Location {
 
@@ -225,7 +193,7 @@ public class LearnFragment extends Fragment {
         initData();
         rv_course = getActivity().findViewById(R.id.courseList);
         rv_course.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        learnAdapter = new LearnAdapter(getActivity().getApplicationContext());
+        learnAdapter = new LearnAdapter(getActivity().getApplicationContext(), img);
         rv_course.setAdapter(learnAdapter);
 
         //跳转视频播放页
@@ -238,8 +206,7 @@ public class LearnFragment extends Fragment {
 
         //popwindow
         context = this;
-        Button popBottomBtn = (Button)getActivity().findViewById(R.id.pop_bottom_btn);
-        popBottomBtn.setOnClickListener(popClick);
-
+        ImageView imgCatalogue = (ImageView) getActivity().findViewById(R.id.catalogue);
+        imgCatalogue.setOnClickListener(popClick);
     }
 }

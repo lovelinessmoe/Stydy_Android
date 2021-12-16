@@ -8,9 +8,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/activity_video_learn.xml" value="0.18854166666666666" />
+        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/discover_tab1_layout.xml" value="0.29891304347826086" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_account.xml" value="0.18854166666666666" />
-        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_learn.xml" value="0.264" />
-        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/list_item_study.xml" value="0.1828125" />
+        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_learn.xml" value="0.4" />
+        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/list_item_study.xml" value="0.6" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/listview_study.xml" value="0.19427083333333334" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/study1pop.xml" value="0.29891304347826086" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -75,5 +76,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.29891304347826086" />
+      </ProjectState>
+    </option>
   </component>
 </project>

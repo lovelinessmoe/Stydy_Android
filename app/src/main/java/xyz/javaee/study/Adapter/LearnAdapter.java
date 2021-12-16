@@ -14,11 +14,8 @@ import xyz.javaee.study.R;
 
 public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ViewHolder> {
 
-    private Context context;
-    private int[] imgs;
-
-    public LearnAdapter() {
-    }
+    private final Context context;
+    private final int[] imgs;
 
     public LearnAdapter(Context context, int[] img) {
         this.context = context;
@@ -36,7 +33,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull LearnAdapter.ViewHolder holder, int position) {
         holder.img.setImageResource(imgs[position]);
-        holder.name.setText(position + "");
+        holder.name.setText("[1 - "+position + "]"+"课程列表测试样例");
     }
 
     @Override
@@ -44,15 +41,14 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ViewHolder> 
         return imgs.length;
     }
 
-
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView name;
 
         public ViewHolder(View view) {
             super(view);
-            img = (ImageView) view.findViewById(R.id.photo_item);
-            name = (TextView) view.findViewById(R.id.message_item);
+            img = view.findViewById(R.id.photo_item);
+            name = view.findViewById(R.id.message_item);
         }
 
     }

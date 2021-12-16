@@ -22,10 +22,13 @@
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/study/app/src/main/res/layout/fragment_list_view_list.xml" value="0.21302083333333333" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/study/app/src/main/res/layout/fragment_view_pager.xml" value="0.19583333333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11727456940222898" />
+        <entry key="app/src/main/res/layout/activity_video_learn.xml" value="0.21" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.11727456940222898" />
         <entry key="app/src/main/res/layout/fragment_contacts.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1381340579710145" />
+        <entry key="app/src/main/res/layout/video_child_item_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/video_group_item_layout.xml" value="0.25" />
         <entry key="app/src/main/res/menu/main_bottom_navigation.xml" value="0.24114583333333334" />
       </map>
     </option>

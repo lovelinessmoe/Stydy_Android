@@ -7,6 +7,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Android1/study/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14322916666666666" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/activity_video_learn.xml" value="0.18854166666666666" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/discover_tab1_layout.xml" value="0.29891304347826086" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_account.xml" value="0.18854166666666666" />
@@ -14,6 +19,28 @@
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/list_item_study.xml" value="0.6" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/listview_study.xml" value="0.19427083333333334" />
         <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/study1pop.xml" value="0.29891304347826086" />
+        <entry key="..\:/Projects/Android_projects/WoKanXingEdu/app/src/main/res/layout/fragment_learn.xml" value="0.25" />
+        <entry key="..\:/study/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25435897435897437" />
+        <entry key="..\:/study/app/src/main/res/drawable/bottom_navigation_item_selector.xml" value="0.1" />
+        <entry key="..\:/study/app/src/main/res/drawable/buttonstyle.xml" value="0.125" />
+        <entry key="..\:/study/app/src/main/res/drawable/ic_launcher_background.xml" value="0.134375" />
+        <entry key="..\:/study/app/src/main/res/drawable/indicator_gray.xml" value="0.134375" />
+        <entry key="..\:/study/app/src/main/res/drawable/indicator_red.xml" value="0.134375" />
+        <entry key="..\:/study/app/src/main/res/layout/acticity_deng_lu2.xml" value="0.1296875" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_deng_lu.xml" value="0.1" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_deng_lu2.xml" value="0.1296875" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_deng_lu_second.xml" value="0.1296875" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_loginfailed.xml" value="0.12604166666666666" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_main.xml" value="0.12604166666666666" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_register.xml" value="0.11822916666666666" />
+        <entry key="..\:/study/app/src/main/res/layout/activity_video_learn.xml" value="0.12604166666666666" />
+        <entry key="..\:/study/app/src/main/res/layout/fragment_account.xml" value="0.1" />
+        <entry key="..\:/study/app/src/main/res/layout/fragment_account2.xml" value="0.1296875" />
+        <entry key="..\:/study/app/src/main/res/layout/fragment_discover.xml" value="0.12604166666666666" />
+        <entry key="..\:/study/app/src/main/res/layout/fragment_home.xml" value="0.12604166666666666" />
+        <entry key="..\:/study/app/src/main/res/layout/fragment_learn.xml" value="0.1296875" />
+        <entry key="..\:/study/app/src/main/res/layout/fragment_view_pager.xml" value="0.1296875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_video_lern.xml" value="0.12771739130434784" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.11727456940222898" />
@@ -69,7 +96,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

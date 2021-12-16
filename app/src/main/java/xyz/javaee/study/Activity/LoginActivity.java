@@ -20,6 +20,16 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Button button = (Button) findViewById(R.id.login_button5);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(i);
+            }
+        });
+
         bt = (Button) findViewById(R.id.login_button);
         //bt1 = (Button) findViewById(R.id.login_button1);
         bt.setOnClickListener(new Button.OnClickListener() {

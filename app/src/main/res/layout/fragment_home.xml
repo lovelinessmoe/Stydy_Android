@@ -4,13 +4,12 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <TextView
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="首页"
-        android:textColor="@color/theme"
-        android:textSize="23sp" />
+        android:layout_height="match_parent"/>
 
     <Button
         android:id="@+id/Button1"

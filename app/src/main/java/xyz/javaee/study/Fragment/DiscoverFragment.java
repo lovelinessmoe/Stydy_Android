@@ -1,12 +1,10 @@
 package xyz.javaee.study.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,12 +14,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-import xyz.javaee.study.Adapter.MyAdapter;
+import xyz.javaee.study.Adapter.DiscoverAdapter;
 import xyz.javaee.study.R;
 
 
 public class DiscoverFragment extends Fragment {
-    private MyAdapter mAdapter;
+    private DiscoverAdapter mAdapter;
     private ViewPager mViewPager;
     private TabLayout mTableLayout;
     @Nullable
@@ -34,7 +32,7 @@ public class DiscoverFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mAdapter = new MyAdapter(getActivity().getSupportFragmentManager());
+        mAdapter = new DiscoverAdapter(getActivity().getSupportFragmentManager());
         mViewPager = (ViewPager) getActivity().findViewById(R.id.main_viewpager);
         mViewPager.setAdapter(mAdapter);
         mTableLayout = getActivity().findViewById(R.id.main_tab);

@@ -6,9 +6,8 @@
     android:orientation="vertical"
     tools:context=".Activity.VideoLearnActivity">
 
-
-    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
-        android:id="@+id/player_list_video"
+    <cn.jzvd.JzvdStd
+        android:id="@+id/jz_video"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
 

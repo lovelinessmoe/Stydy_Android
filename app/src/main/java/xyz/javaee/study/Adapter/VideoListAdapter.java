@@ -10,19 +10,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
+import cn.jzvd.JzvdStd;
 import xyz.javaee.study.Entity.Video;
 import xyz.javaee.study.Entity.VideoList;
 import xyz.javaee.study.R;
 
 public class VideoListAdapter extends BaseExpandableListAdapter {
     private List<VideoList> videosList = null;
-    private Context context = null;                    //Context为ExpandableListView所在的Activity，通过构造方法的参数传递进来，可以获得该Activity对应的Inflater
+    private Context context = null;              //Context为ExpandableListView所在的Activity，通过构造方法的参数传递进来，可以获得该Activity对应的Inflater
     private LayoutInflater mInflater = null;     //获得Activity的Inflater
-    private JCVideoPlayerStandard player;
+    private JzvdStd player;
 
-    public VideoListAdapter(Context context, List<Video> videos, JCVideoPlayerStandard player) {
+    public VideoListAdapter(Context context, List<Video> videos, JzvdStd player) {
         //转为数据结构为树形
         ArrayList<VideoList> videoLists = new ArrayList<>();
         for (Video video : videos) {
@@ -128,9 +127,9 @@ public class VideoListAdapter extends BaseExpandableListAdapter {
             public void onClick(View view) {
                 String videoURL;
                 videoURL = child.getURL();
-                player.setUp(videoURL, JCVideoPlayer.SCREEN_LAYOUT_NORMAL, "");
-                //直接进入全屏
-//                player.startFullscreen(context, JCVideoPlayerStandard.class, videoURL, "");
+                player.setUp(videoURL, child.getName());
+                //全屏
+//                player.setScreenFullscreen();
                 //模拟用户点击开始按钮，NORMAL状态下点击开始播放视频，播放中点击暂停视频
                 player.startButton.performClick();
             }

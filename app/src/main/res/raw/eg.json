@@ -1,0 +1,17 @@
+[
+    {
+      "photo": "1",
+      "name": "2",
+      "progress": "no"
+    },
+    {
+      "photo": "3",
+      "name": "4",
+      "progress": "yes"
+    },
+    {
+      "photo": "5",
+      "name": "6",
+      "progress": "no"
+    }
+  ]

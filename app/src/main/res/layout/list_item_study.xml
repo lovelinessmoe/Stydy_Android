@@ -5,8 +5,8 @@
 
     <ImageView
         android:id="@+id/photo_item"
-        android:layout_width="280dp"
-        android:layout_height="210dp" />
+        android:layout_width="160dp"
+        android:layout_height="120dp" />
     <TextView
         android:id="@+id/message_item"
         android:layout_width="match_parent"

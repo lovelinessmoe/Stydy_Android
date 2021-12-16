@@ -4,19 +4,20 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import xyz.javaee.study.R;
 import xyz.javaee.study.View.ViewPagerFragment;
 
 public class MyAdapter extends FragmentPagerAdapter {
-    private int mCount = 3 ;
-    private int[] mColors = new int[]{android.R.color.holo_orange_dark,android.R.color.holo_green_dark
-            ,android.R.color.holo_blue_dark};
+    private int mCount = 2 ;
+//    R.layout.discover_tab1_layout
+    private int[] mLayouts = new int[]{R.layout.discover_tab1_layout,R.layout.discover_tab2_layout};
     public MyAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
-        return ViewPagerFragment.newInstance(position,mColors[position]);
+        return ViewPagerFragment.newInstance(mLayouts[position]);
     }
 
     @Override
@@ -26,6 +27,12 @@ public class MyAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return "Page" + (position + 1);
+        switch (position) {
+            case 0:
+                return "培训课程";
+            case 1:
+                return "新闻动态";
+            default:return "0";
+        }
     }
 }

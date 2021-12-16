@@ -130,34 +130,34 @@ public class LearnFragment extends Fragment {
             }
         });
 
-        Button open = (Button) popupWindowView.findViewById(R.id.open);
-        Button save = (Button) popupWindowView.findViewById(R.id.save);
-        Button close = (Button) popupWindowView.findViewById(R.id.close);
+        Button share = (Button) popupWindowView.findViewById(R.id.share);
+        Button download = (Button) popupWindowView.findViewById(R.id.download);
+        Button setting = (Button) popupWindowView.findViewById(R.id.setting);
 
 
-        open.setOnClickListener(new View.OnClickListener() {
+        share.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Open", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "share", Toast.LENGTH_LONG).show();
                 popupWindow.dismiss();
             }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
+        download.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Open", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "download", Toast.LENGTH_LONG).show();
                 popupWindow.dismiss();
             }
         });
 
-        close.setOnClickListener(new View.OnClickListener() {
+        setting.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Open", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "setting", Toast.LENGTH_LONG).show();
                 popupWindow.dismiss();
             }
         });

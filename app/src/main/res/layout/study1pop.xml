@@ -5,11 +5,11 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/open"
+        android:id="@+id/share"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#1296DB"
-        android:text="@string/open"
+        android:text="分享"
         android:textSize="18sp"
         android:textColor="@color/write" />
 
@@ -19,11 +19,11 @@
         android:background="#eeeeee" />
 
     <Button
-        android:id="@+id/save"
+        android:id="@+id/download"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#1296DB"
-        android:text="@string/save"
+        android:text="下载"
         android:textSize="18sp"
         android:textColor="@color/write" />
 
@@ -33,11 +33,11 @@
         android:background="#eeeeee" />
 
     <Button
-        android:id="@+id/close"
+        android:id="@+id/setting"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#1296DB"
-        android:text="@string/close"
+        android:text="设置"
         android:textSize="18sp"
         android:textColor="@color/write" />
 

@@ -10,8 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 import xyz.javaee.study.R;
 
 public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ViewHolder> {
@@ -30,7 +28,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ViewHolder> 
     @NonNull
     @Override
     public LearnAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_study,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_study, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -38,7 +36,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull LearnAdapter.ViewHolder holder, int position) {
         holder.img.setImageResource(imgs[position]);
-        holder.name.setText(position+"");
+        holder.name.setText(position + "");
     }
 
     @Override

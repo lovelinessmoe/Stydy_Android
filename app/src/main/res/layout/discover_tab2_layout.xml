@@ -3,20 +3,24 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <TextView
+        android:layout_width="410dp"
+        android:layout_height="30dp"
+        android:text="雪中悍刀行首播"></TextView>
     <ImageView
         android:layout_width="410dp"
-        android:layout_height="200dp"
+        android:layout_height="280dp"
         android:scaleType="center"
-        android:src="@drawable/fj1"></ImageView>
+        android:src="@drawable/xw1"></ImageView>
     <TextView
         android:layout_width="410dp"
         android:layout_height="30dp"
-        android:text=""></TextView>
+        android:text="篮网最新消息！欧文回归曙光重现"></TextView>
 
     <ImageView
         android:layout_width="410dp"
-        android:layout_height="200dp"
-        android:src="@drawable/fj2"
+        android:layout_height="300dp"
+        android:src="@drawable/xw2"
         android:scaleType="center"></ImageView>
 
     <TextView
@@ -24,9 +28,5 @@
         android:layout_height="30dp"
         android:text=""></TextView>
 
-    <ImageView
-        android:layout_width="410dp"
-        android:layout_height="200dp"
-        android:src="@drawable/fj3"
-        android:scaleType="center"></ImageView>
+
 </LinearLayout>

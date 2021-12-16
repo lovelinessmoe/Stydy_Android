@@ -1,6 +1,6 @@
 package xyz.javaee.study.Fragment;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,15 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -65,20 +64,14 @@ public class LearnFragment extends Fragment {
     }
 
 
-    View.OnClickListener popClick = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.catalogue: {
-                    from = Location.BOTTOM.ordinal();
-                    break;
-                }
-            }
-
-            //调用此方法，menu不会顶置
-            //popupWindow.showAsDropDown(v);
-            initPopupWindow();
+    View.OnClickListener popClick = v -> {
+        if (v.getId() == R.id.catalogue) {
+            from = Location.BOTTOM.ordinal();
         }
+
+        //调用此方法，menu不会顶置
+        //popupWindow.showAsDropDown(v);
+        initPopupWindow();
     };
 
     class popupDismissListener implements PopupWindow.OnDismissListener {
@@ -90,6 +83,7 @@ public class LearnFragment extends Fragment {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     protected void initPopupWindow() {
         View popupWindowView = getLayoutInflater().inflate(R.layout.study1pop, null);
         //内容，高度，宽度
@@ -116,50 +110,34 @@ public class LearnFragment extends Fragment {
         //关闭事件
         popupWindow.setOnDismissListener(new popupDismissListener());
 
-        popupWindowView.setOnTouchListener(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-				/*if( popupWindow!=null && popupWindow.isShowing()){
-					popupWindow.dismiss();
-					popupWindow=null;
-				}*/
-                // 这里如果返回true的话，touch事件将被拦截
-                // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
-                return false;
-            }
+        popupWindowView.setOnTouchListener((v, event) -> {
+            /*if( popupWindow!=null && popupWindow.isShowing()){
+                popupWindow.dismiss();
+                popupWindow=null;
+            }*/
+            // 这里如果返回true的话，touch事件将被拦截
+            // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
+            return false;
         });
 
-        Button share = (Button) popupWindowView.findViewById(R.id.share);
-        Button download = (Button) popupWindowView.findViewById(R.id.download);
-        Button setting = (Button) popupWindowView.findViewById(R.id.setting);
+        Button share = popupWindowView.findViewById(R.id.share);
+        Button download = popupWindowView.findViewById(R.id.download);
+        Button setting = popupWindowView.findViewById(R.id.setting);
 
 
-        share.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "share", Toast.LENGTH_LONG).show();
-                popupWindow.dismiss();
-            }
+        share.setOnClickListener(v -> {
+            Toast.makeText(getActivity(), "share", Toast.LENGTH_LONG).show();
+            popupWindow.dismiss();
         });
 
-        download.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "download", Toast.LENGTH_LONG).show();
-                popupWindow.dismiss();
-            }
+        download.setOnClickListener(v -> {
+            Toast.makeText(getActivity(), "download", Toast.LENGTH_LONG).show();
+            popupWindow.dismiss();
         });
 
-        setting.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "setting", Toast.LENGTH_LONG).show();
-                popupWindow.dismiss();
-            }
+        setting.setOnClickListener(v -> {
+            Toast.makeText(getActivity(), "setting", Toast.LENGTH_LONG).show();
+            popupWindow.dismiss();
         });
     }
 
@@ -182,7 +160,7 @@ public class LearnFragment extends Fragment {
         LEFT,
         RIGHT,
         TOP,
-        BOTTOM;
+        BOTTOM
 
     }
 
@@ -195,6 +173,8 @@ public class LearnFragment extends Fragment {
         rv_course.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         learnAdapter = new LearnAdapter(getActivity().getApplicationContext(), img);
         rv_course.setAdapter(learnAdapter);
+        //添加Android自带的分割线
+        rv_course.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
 
         //跳转视频播放页
         ImageView imgPlay = root.findViewById(R.id.playButton);
@@ -206,7 +186,7 @@ public class LearnFragment extends Fragment {
 
         //popwindow
         context = this;
-        ImageView imgCatalogue = (ImageView) getActivity().findViewById(R.id.catalogue);
+        ImageView imgCatalogue = getActivity().findViewById(R.id.catalogue);
         imgCatalogue.setOnClickListener(popClick);
     }
 }

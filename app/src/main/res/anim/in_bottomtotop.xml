@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
-    <translate 
+
+    //ciwei's
+	<translate
 	    android:fromYDelta="100%"
 	    android:toYDelta="0"
 	    android:duration="500"/>
+	<!--	fromYDelta：动画起始Y轴位置-->
+	<!--	toYDelta：动画结束Y轴位置-->
+	<!--	duration：动画持续时间-->
+
 
 </set>

@@ -8,7 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import xyz.javaee.study.R;
+import xyz.javaee.study.utils.LoginUtil;
 
 public class LoginActivity extends Activity {
     public Button bt;
@@ -25,7 +29,7 @@ public class LoginActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(i);
             }
         });
@@ -43,13 +47,22 @@ public class LoginActivity extends Activity {
                 } else {
                     System.out.println(mypassword);
                     System.out.println(myName);
-                    if ("admin".equals(myName) && "123456".equals(mypassword)) {
-                        Intent intent = getIntent();
-                        intent.putExtra("myName",myName);
-                        intent.putExtra("myPassword",mypassword);
-                        setResult(1,intent);
-                        finish();
-                    }else {
+                    ArrayList<Map<String, String>> userInfo = LoginUtil.getUserInfo(getApplicationContext());
+                    Boolean flag = false;
+
+                    for (Map<String, String> stringStringMap : userInfo) {
+                        if (stringStringMap.get("name").equals(myName)) {
+                            if (stringStringMap.get("password").equals(mypassword)) {
+                                Intent intent = getIntent();
+                                intent.putExtra("myName", myName);
+                                intent.putExtra("myPassword", mypassword);
+                                setResult(1, intent);
+                                flag = true;
+                                finish();
+                            }
+                        }
+                    }
+                    if (!flag) {
                         Toast.makeText(getApplicationContext(), "用户名或密码错误", Toast.LENGTH_LONG).show();
                     }
                 }

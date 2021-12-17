@@ -1,30 +1,25 @@
 package xyz.javaee.study.Activity;
 
 import android.os.Bundle;
-import android.widget.ExpandableListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.google.android.material.tabs.TabLayout;
 
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;
-import cz.msebera.android.httpclient.Header;
-import xyz.javaee.study.Adapter.VideoListAdapter;
-import xyz.javaee.study.Entity.Video;
+import xyz.javaee.study.Fragment.VideoLearn.ContentFragment;
+import xyz.javaee.study.Fragment.VideoLearn.IntroduceFragment;
+import xyz.javaee.study.Fragment.VideoLearn.NoteFragment;
+import xyz.javaee.study.Fragment.VideoLearn.QandAFragment;
 import xyz.javaee.study.R;
 
 public class VideoLearnActivity extends AppCompatActivity {
-
-    private String videoURL = "";
-    private ExpandableListView listview = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,32 +27,46 @@ public class VideoLearnActivity extends AppCompatActivity {
         setContentView(R.layout.activity_video_learn);
 
         //初始化播放器
-        JzvdStd jzvdStd = (JzvdStd) findViewById(R.id.jz_video);
+        JzvdStd jzvdStd = findViewById(R.id.jz_video);
         //设置路径
-        videoURL = "http://vfile.9mededu.com/met_video/480P/20210721143724.mp4";
+        String videoURL = "http://vfile.9mededu.com/met_video/480P/20210721143724.mp4";
         jzvdStd.setUp(videoURL, "默认视频", JzvdStd.SCREEN_NORMAL);
         Glide.with(VideoLearnActivity.this).load("https://picb2.photophoto.cn/36/507/36507192_1.jpg").into(jzvdStd.posterImageView);
 
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get("http://javaee.xyz/video.json", new AsyncHttpResponseHandler() {
+        final List<Fragment> fragments = new ArrayList<>();
+        fragments.add(ContentFragment.newInstance(jzvdStd));
+        fragments.add(QandAFragment.newInstance());
+        fragments.add(NoteFragment.newInstance());
+        fragments.add(IntroduceFragment.newInstance());
+
+        TabLayout mTabLayout = findViewById(R.id.mTabLayout);
+        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                jzvdStd.startButton.performClick();
-
-                String json = new String(responseBody, StandardCharsets.UTF_8);
-                //FastJson
-                List<Video> videos = JSON.parseArray(json, Video.class);
-
-                //树列表
-                listview = (ExpandableListView) findViewById(R.id.classList);
-                listview.setAdapter(new VideoListAdapter(getApplicationContext(), videos, jzvdStd));
+            public void onTabSelected(TabLayout.Tab tab) {
+                //选中某个tab
+                replaceFragment(fragments.get(tab.getPosition()));
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                System.err.println("fail");
+            public void onTabUnselected(TabLayout.Tab tab) {
+                //当tab从选择到未选择
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                //已经选中tab后的重复点击tab
+            }
+
+            private void replaceFragment(Fragment fragment) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.tab_container, fragment).commit();
             }
         });
+
+        // 2.添加Tab
+        mTabLayout.addTab(mTabLayout.newTab().setText("目录"), true);
+        mTabLayout.addTab(mTabLayout.newTab().setText("问答"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("笔记"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("介绍"));
     }
 
     @Override

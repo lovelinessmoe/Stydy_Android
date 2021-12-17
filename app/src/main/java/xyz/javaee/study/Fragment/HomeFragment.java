@@ -29,7 +29,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cn.jzvd.JzvdStd;
 import xyz.javaee.study.Activity.MainActivity;
+import xyz.javaee.study.Activity.VideoLearnActivity;
 import xyz.javaee.study.Adapter.HomePhotoAdapter;
 import xyz.javaee.study.R;
 
@@ -51,8 +53,6 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-
         mRootView = inflater.inflate(R.layout.fragment_home, container, false);
         return mRootView;
     }
@@ -69,6 +69,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
         mData = new ArrayList<>();
         mData.add("推荐");
         initView();
+
     }
 
     List<String> networkImage = new ArrayList<>();
@@ -111,6 +112,14 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             }
         });
 
+
+        //初始化播放器
+        JzvdStd jzvdStd = getActivity().findViewById(R.id.jz_video);
+        //设置路径
+        String videoURL = "http://vfile.9mededu.com/met_video/480P/20210721143724.mp4";
+        jzvdStd.setUp(videoURL, "默认视频", JzvdStd.SCREEN_NORMAL);
+        Glide.with(getActivity().getApplicationContext()).load("https://picb2.photophoto.cn/36/507/36507192_1.jpg").into(jzvdStd.posterImageView);
+
     }
 
     private void initBanner(){
@@ -126,7 +135,6 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
                 .setPageIndicator(new int[] { R.drawable.indicator_gray, R.drawable.indicator_red })//设置指示器样式
                 .setOnItemClickListener(this)//点击事件
                 .setScrollDuration(1500);//滑动的时间
-
     }
 
     @Override
@@ -149,8 +157,6 @@ class NetWorkImageHolderView implements Holder<String> {
 
     @Override
     public void UpdateUI(Context context, int position, String data) {
-        //Glide.with(context).load(data.getImgUrl()).into(imageView);
-        Log.d("imgUrl", "UpdateUI: "+data);
         Glide.with(context).load(data).placeholder(R.mipmap.ic_launcher_round).into(imageView);
     }
 }

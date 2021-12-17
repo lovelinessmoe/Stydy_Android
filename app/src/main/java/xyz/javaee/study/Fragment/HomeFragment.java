@@ -67,9 +67,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mData = new ArrayList<>();
-        for (int i = 0; i < 15; i++){
-            mData.add("数据"+i);
-        }
+        mData.add("推荐");
         initView();
     }
 

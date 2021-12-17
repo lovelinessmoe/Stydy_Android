@@ -8,9 +8,10 @@
     <ImageButton
         android:id="@+id/btn_one"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:background="@drawable/buttonstyle"
-        android:src="@drawable/ic_launcher_foreground"
+        android:gravity="center"
+        android:src="@drawable/login1"
         android:text="登录/注册" />
 
     <TextView
@@ -29,6 +30,7 @@
         android:background="@drawable/buttonstyle"
         android:gravity="left"
         android:padding="20dp"
+        android:drawableLeft="@drawable/login4"
         android:text="我的订单"
         android:textSize="23sp"
         tools:ignore="MissingConstraints" />
@@ -41,6 +43,7 @@
         android:background="@drawable/buttonstyle"
         android:gravity="left"
         android:padding="20dp"
+        android:drawableLeft="@drawable/login3"
         android:text="在线咨询"
         android:textSize="23sp"
         tools:ignore="MissingConstraints" />
@@ -53,6 +56,7 @@
         android:background="@drawable/buttonstyle"
         android:gravity="left"
         android:padding="20dp"
+        android:drawableLeft="@drawable/login2"
         android:text="设置"
         android:textSize="23sp"
         tools:ignore="MissingConstraints" />

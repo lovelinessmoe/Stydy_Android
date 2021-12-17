@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/login5"
             android:hint="手机号/邮箱"
             android:textSize="30sp" />
 
@@ -31,6 +32,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/login6"
             android:hint="登陆密码"
             android:password="true"
             android:textSize="30sp" />
@@ -39,6 +41,7 @@
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/button"
             android:text="登陆"
             android:textSize="20dp" />
 
@@ -70,8 +73,10 @@
     <TextView
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
+        android:drawableBottom="@drawable/login7"
         android:layout_marginBottom="40dp"
         android:layout_alignParentBottom="true"
+        android:gravity="center"
         android:text="登录即代表阅读并同意阅读条款"
         android:layout_height="wrap_content"/>
 

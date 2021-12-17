@@ -35,5 +35,18 @@
         android:layout_gravity="center"
         android:scaleType="center"
         android:src="@drawable/xw2" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="epic喜加一"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:scaleType="center"
+        android:src="@drawable/xw3" />
 </LinearLayout>
 </ScrollView>

@@ -82,6 +82,4 @@ public class VideoLearnActivity extends AppCompatActivity {
         super.onPause();
         Jzvd.releaseAllVideos();
     }
-
-
 }
